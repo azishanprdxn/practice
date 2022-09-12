@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Mini Corp.",
+    "order_count": 23,
+    "address": "Finite Loop Drive"
+  },
+  {
+    "id": 2,
+    "name": "Mega Corp.",
+    "order_count": 83,
+    "address": "Infinity Loop Drive"
+  }
+]
