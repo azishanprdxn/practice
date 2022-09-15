@@ -32,7 +32,7 @@ lines.forEach((item) => {
   }
 });
 
-const synonyms = (lines, index) => {
+const createDictionary = (lines, index) => {
   let tempDictionary = {};
   for (let i = 0; i < lines.length; i++) {
     let [first, second] = lines[i].split(' ');
@@ -83,10 +83,8 @@ const resolveQuery = (lines, dict) => {
 for (let index = 0; index < cases.length; index++) {
   item = linesObject[cases[index]];
   if (index === 0 || index % 2 === 0) {
-    dictionary = synonyms(item, index);
-    if (index === 0) {
-      console.log(dictionary);
-    }
+    dictionary = createDictionary(item, index);
+    // console.log(dictionary);
   } else {
     resolveQuery(item, dictionary);
     counter++;
