@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const filePath = './codility/files/example.in';
+const outputPath = './codility/files/example.out';
 
 const fileData = fs.readFileSync(filePath, 'utf8', (err, data) => {
   if (err) {
@@ -44,6 +45,9 @@ const createDictionary = (lines, index) => {
     } else {
       tempDictionary[first] = [...tempDictionary[first], second];
       const item = tempDictionary[first][0];
+      if (index === 0) {
+        console.log(tempDictionary[item], i);
+      }
       if (tempDictionary[item].includes(first)) {
         tempDictionary[item] = [...tempDictionary[item], second];
       }
@@ -92,4 +96,5 @@ for (let index = 0; index < cases.length; index++) {
   }
 }
 
-console.log(output.join('\n'));
+fs.writeFileSync(outputPath, output.join('\n'));
+// console.log(output.join('\n'));
