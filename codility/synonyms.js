@@ -68,6 +68,9 @@ const createDictionary = (lines, index) => {
       iterator++;
     }
   }
+  if (index === 0) {
+    console.log(tempDictionary);
+  }
 
   return tempDictionary;
 };
